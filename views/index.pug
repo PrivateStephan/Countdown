@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    .main.container.text-xs-center
+        h2.display-4 Code BootCamp Windesheim Flevoland
+        p.lead
+            | If you are starting with de ADSD in August of 2018, this is the place to be. We will be preparing
+            | you for the coding challenges that will be coming. We will start with some excercises for the
+            | HTML5 mind, then we will slide into CSS3 and will create the nicest layout. At the end we will bring
+            | interactivity to your coding skills with JavaScript.
+        if(!email)
+            a.btn.btn-primary-outline.btn-lg(href='/register') Register
+        else
+            .main.container.text-xs-center
+                h2 You are registerd with #{email}
+                form(action="/goodbye" method="POST")
+                button(type='submit') Goodbye
